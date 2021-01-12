@@ -53,12 +53,12 @@ class App extends React.Component {
 
   render() {
     return (
-      <div>
-        <div>
-          <h1>Welcome to your Todo App!</h1>
+      <div className ='App'>
+        <div className='header'>
+          <h1>Todo App!</h1>
           <TodoForm handleAdd={this.handleAdd}/>
         </div>
-        <TodoList handleCompleted={this.handleCompleted} handleToggle={this.handleToggle} />
+        <TodoList handleCompleted={this.handleCompleted} tasks={this.state.tasks} handleToggle={this.handleToggle} />
       </div>
     );
   }
