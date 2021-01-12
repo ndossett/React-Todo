@@ -1,6 +1,7 @@
 import React from 'react';
 import TodoList from './components/TodoList'
 import TodoForm from './components/TodoForm'
+import './components/Todo.css'
 
 const tasks = [
   {
@@ -14,6 +15,7 @@ const tasks = [
     completed: false
   }
 ]
+console.log(tasks)
 
 class App extends React.Component {
   // you will need a place to store your state in this component.
@@ -44,7 +46,8 @@ class App extends React.Component {
     })
   }
 
-  handleCompleted = () => {
+  handleCompleted = (e) => {
+    e.preventDefault()
     this.setState({
       tasks: this.state.tasks.filter(todo=>
         (!todo.completed))
